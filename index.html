@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>スライド</title>
+  <style>
+      body {
+        text-align:center;
+      }
+      #slide img{
+         margin: auto;
+         display: none;
+      }    
+  </style>
+</head>
+<body>
+  <div id="slide">
+    <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG16oSjAl1ZxmVqb7tIsNkEzUHaaqUEUDy0fLIzlaX7RPPouwFpxBbYMr3s0WaK1x7lRF_WXOgfoLQEv5YKC_g4oosmNfy3Ar6-ABFXxhW9DPU1pHpuzZm-tR6UqYsCDm92wOE0QCToa1NTdTefBG1lKuuGo3zagSo9Bzk4VczAix0zEw6L1p02sRWaiGl0KIN5SUdSYhx-oBiq8EUBHI602MEFK9rj0Y7LLyCqdJczYeXGj0Z3M2WZIW-mJveG3_f1YGFhH6RqTC_q1eFRk5JI0vr_6r-P8iXrCWNWBivuitsFXrjHz76z_RAcf0zKnri41TwmgKOTgyAA5mpx4Rtv7oH9EAaJkGxgeq7ueOEwGZCZw0ISF3LxEEKkSWwBJsuw==/apex-legends-emergence-patch-notes-thumbnail.jpg.adapt.crop16x9.431p.jpg">
+    <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG91u3BflEjcIEZ5hfFIgIb1shtjl36bW_BQH7v_bi-tuaeFeFREfRL6N3P_Aim8o7BB0hgrRAhp1zFBtIhcMorXwvz2MmYtuFyZLM5L2qYznjBBSva49GOyy8gqnSXM2Hlxo9GdzNlmSFvpib3ht_39WBhYR-kakwv6tXhUZOSSNL6_-q_j_Il6wljVgYr7orULlODcH7qEWvx8NTmXqhGb8Nemz4T7PB8PzcsnZU8PYZB0r-WAHsV9I-2x6fcR0FEh7RUCSIMpxdC7zhN3nmgI=/image01.jpg">
+    <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG8Q724yY7aOyauhX_O0sPgN6cN63LPMLAMVIGlMK8TWbpvxpgClok2YoyVdd0L9Ocg9bILQnY9yEV4dcDcNNXTFbTCV9DiTYgmzrrDHZUlnJwTKD2Bvh1DUWRdcfAg8xrMviI_Aq2JEKaeaQdv5YXmiB_0GGXnHU1dgclEeB1knOfLGb-WAst5Hz1zhmlUGE3X2aeYElFvb-SNKw7iejPNa63VNVztzJAv6JfwijwAj9TzKDrrlR6w32WfCj1cyPwExzAjZff2zSQm6HZiVb9gI=/fca7495fd22f3f15.jpg">
+  </div>
+  <button id="rev">前へ</button>
+  <button id="next">次へ</button>
+  
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+      const images = $('#slide img');
+      let counter = 0;
+      let index = 0;
+
+      images.eq(index).show();
+
+      $('#next').click(() => {
+          images.eq(index).hide();
+
+          index = ++counter % images.length;
+
+          images.eq(index).fadeIn();
+      })
+
+      $('#rev').click(() => {
+
+          images.eq(index).hide();
+
+          index = --counter % images.length;
+
+          images.eq(index).fadeIn();
+      })
+  </script>
+</body>
+</html>
